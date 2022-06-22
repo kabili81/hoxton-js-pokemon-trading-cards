@@ -11,19 +11,32 @@
 
 console.log(data);
 
-function createPokemonCard(card) {
+function createCard(pokemon) {
     let liEl = document.createElement('li')
     liEl.className = 'card'
+
+    
+    let h2El = document.createElement('h2')
+    h2El.className = 'card--title'
+    h2El.textContent = pokemon.name
+
     let imgEl = document.createElement('img')
     imgEl.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
     imgEl.alt = ''
     imgEl.className = "card--img"
-    let h2El = document.createElement('h2')
-  h2El.textContent = `Name: ${'pokemon."pokemon"'}`
+
+    let ulEl = document.createElement('ul')
+    ulEl.className = 'card--text'
+    
+    let li2EL = document.createElement('li')
+    li2EL.textContent = pokemon.stats[0].stat.name + ': ' + pokemon.stats[0].base_stat 
+
+ 
   document.body.append(liEl)
   liEl.append(imgEl)
-  h2El.innerText = 'Bulbasa'
+  
   
      }
-
-     createPokemonCard(data) 
+for (let pokemon of data) {
+     createCard(pokemon) 
+}
