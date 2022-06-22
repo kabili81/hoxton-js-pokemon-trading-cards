@@ -34,7 +34,7 @@ function createCard(pokemon) {
  
   document.body.append(liEl)
   liEl.append(imgEl)
-  
+  h2El.append(h2El) 
   
      }
 for (let pokemon of data) {
